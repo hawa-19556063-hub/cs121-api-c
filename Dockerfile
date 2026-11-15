@@ -8,7 +8,7 @@ WORKDIR /app
 # Copy source files
 COPY main.c mongoose.c mongoose.h ./
 
-# Compile the C server
+# Compile the C server (using capital letter O in -O2)
 RUN gcc -O2 -std=gnu99 -DMG_ENABLE_HTTP=1 main.c mongoose.c -o server -lpthread -ldl
 
 # Expose port and run server
